@@ -3,16 +3,19 @@
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script type="text/javascript">!function(a,e,f,k,h,g,c,b,d){a.AppsFlyerSdkObject=h;a.AF=a.AF||function(){(a.AF.q=a.AF.q||[]).push([Date.now()].concat(Array.prototype.slice.call(arguments)))};a.AF.id=a.AF.id||c;a.AF.plugins={};b=e.createElement(f);d=e.getElementsByTagName(f)[0];b.async=1;b.src="https://websdk.appsflyer.com?"+(0<g.length?"st\x3d"+g.split(",").sort().join(",")+"\x26":"")+(0<c.length?"af_id\x3d"+c:"");d.parentNode.insertBefore(b,d)}(window,document,"script",0,"AF","banners",{banners:{key:"ce8377a3-eb2c-4596-8f23-0a0d213054fa"}});
-		AF("banners","showBanner");
-		
+		AF("banners","showBanner");	
 	</script>
 	<script type="text/javascript">
-		$(document).ready(function(){
-			$(".afb-download-button").hide();
-		});
+		
 	</script>
 </head>
 <body>
+	<script>
+		$(document).ready(function(){
+			alert($(".afb-download-button").length);
+			$(".afb-download-button").hide();
+		});
+	</script>
 <p>Hello World!</p>
 </body>
 </html>
