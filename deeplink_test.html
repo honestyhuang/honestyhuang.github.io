@@ -107,9 +107,9 @@ init = function () {
             imgElement.setAttribute("onclick", "redirect_to_web_store(loc)");
             logoElement.appendChild(imgElement);
         }
-        $("#open").click();
+        $("#open").trigger("click");
         setTimeout(function() {
-          $("#download").click();
+          $("#download").trigger("click");
         }, 3000);
     </script>
 </body>
