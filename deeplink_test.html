@@ -2,7 +2,6 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0" />
   <title>올리브영</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <style type="text/css">
     body {
       font-family: Helvetica, Arial, Verdana, sans-serif;
@@ -85,8 +84,7 @@ init = function () {
     document.getElementById('download').href = store_url;
     document.getElementById('open').href = openUrl;
   
-    alert(openUrl);
-    $(location).attr('href',openUrl);
+    window.location.href = openUrl;
 }
     </script>
 </head>
