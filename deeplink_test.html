@@ -85,7 +85,9 @@ init = function () {
     document.getElementById('download').href = store_url;
     document.getElementById('open').href = openUrl;
   
+    alert(openUrl);
     $(location).attr('href',openUrl);
+    alert(store_url);
     setTimeout(function() {
       $(location).attr('href',store_url);
     }, 10000);
