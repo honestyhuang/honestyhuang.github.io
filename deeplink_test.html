@@ -84,16 +84,11 @@ init = function () {
     }
     document.getElementById('download').href = store_url;
     document.getElementById('open').href = openUrl;
+  
     $(location).attr('href',openUrl);
     setTimeout(function() {
       $(location).attr('href',store_url);
-    }, 1000);
-    alert("redirection");
-    $("#open").trigger("click");
-    alert("tried click open");
-    setTimeout(function() {
-       $("#download").trigger("click");
-    }, 3000);
+    }, 10000);
 }
     </script>
 </head>
