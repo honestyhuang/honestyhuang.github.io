@@ -1,0 +1,116 @@
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0" />
+  <title>올리브영</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <style type="text/css">
+    body {
+      font-family: Helvetica, Arial, Verdana, sans-serif;
+      margin: 0;
+      padding: 5px;
+      text-align: center;
+      background-color: #ebebeb;
+    }
+
+    .button {
+      font-size: 22px;
+      color: white;
+      margin: 0 auto;
+      padding: 14px;
+      background-color: #1363c6;
+      border: 1px solid #1363c6;
+      display: block;
+      width: 200px
+    }
+
+    div {
+      margin-bottom: 20px
+    }
+
+    .app-name {
+      padding-bottom: 7px;
+      margin-top: 21px;
+      border-bottom: 1px solid #afafaf;
+      font-size: 20px;
+      font-weight: bold;
+      display: inline-block
+    }
+
+    a {
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .download-button {
+      padding-top: 15px;
+    }
+
+    .download-button {
+      padding-top: 20px;
+    }
+
+    @media screen and (max-device-width:480px) {
+      body {
+        -webkit-text-size-adjust: none
+      }
+    }
+  </style>
+    <script type="text/javascript">
+        //  LANDING_PAGE
+init = function () {
+    var store_link = "https://m.oliveyoung.co.kr/m/common/partner.do?chlNo=6&chlDtlNo=74&sndType=planshop&sndVal=500000101070006&_CAD=nms17&stonUseYn=Y&is_retargeting=true&af_dp=oliveyoungappsflyer%3A%2F%2FmovePage%3Furl%3Dhttps%253A%252F%252Fma.oliveyoung.co.kr%252Fm%252Fcommon%252Fpartner.do%253FchlNo%253D6%2526chlDtlNo%253D74%2526sndType%253Dplanshop%2526sndVal%253D500000101070006%2526_CAD%253Dnms17%2526stonUseYn%253DY&af_chrome_lp=true&c=mNaver-SPDA&af_ad=191021-planshop-500000100700120-IMG-a195-0912&pid=mNaver&af_channel=naver-banner-da-m&af_adset=N---&referrer=af_tranid%3Dai961pNpykjxgxGJ_9pzlQ%26af_dp%3Doliveyoungappsflyer%253A%252F%252FmovePage%253Furl%253Dhttps%25253A%25252F%25252Fma.oliveyoung.co.kr%25252Fm%25252Fcommon%25252Fpartner.do%25253FchlNo%25253D6%252526chlDtlNo%25253D74%252526sndType%25253Dplanshop%252526sndVal%25253D500000101070006%252526_CAD%25253Dnms17%252526stonUseYn%25253DY%26af_chrome_lp%3Dtrue%26pid%3DmNaver%26is_retargeting%3Dtrue%26af_ios_url%3Dhttps%3A%2F%2Fm.oliveyoung.co.kr%2Fm%2Fcommon%2Fpartner.do%3FchlNo%3D6%26chlDtlNo%3D74%26sndType%3Dplanshop%26sndVal%3D500000101070006%26_CAD%3Dnms17%26stonUseYn%3DY%26af_adset%3DN---%26af_ad%3D191021-planshop-500000100700120-IMG-a195-0912%26af_web_id%3D7b4830ca-12c4-4e57-9a79-372d5e710b54%26af_channel%3Dnaver-banner-da-m%26c%3DmNaver-SPDA%26af_android_url%3Dhttps%3A%2F%2Fm.oliveyoung.co.kr%2Fm%2Fcommon%2Fpartner.do%3FchlNo%3D6%26chlDtlNo%3D74%26sndType%3Dplanshop%26sndVal%3D500000101070006%26_CAD%3Dnms17%26stonUseYn%3DY";
+    var full_package_name = "com.oliveyoung";
+    var full_package_name_len = full_package_name.length;
+    var index_of_last_dash = full_package_name.lastIndexOf('-');
+    var package_name = index_of_last_dash < 0 ? full_package_name : full_package_name.slice(0, index_of_last_dash);
+    var app_link = "oliveyoungappsflyer://movePage?url=https%3A%2F%2Fma.oliveyoung.co.kr%2Fm%2Fcommon%2Fpartner.do%3FchlNo%3D6%26chlDtlNo%3D74%26sndType%3Dplanshop%26sndVal%3D500000101070006%26_CAD%3Dnms17%26stonUseYn%3DY&af_ad=191021-planshop-500000100700120-IMG-a195-0912&af_adset=N---&af_android_url=https%3A%2F%2Fm.oliveyoung.co.kr%2Fm%2Fcommon%2Fpartner.do%3FchlNo%3D6%26chlDtlNo%3D74%26sndType%3Dplanshop%26sndVal%3D500000101070006%26_CAD%3Dnms17%26stonUseYn%3DY&af_channel=naver-banner-da-m&af_chrome_lp=true&af_deeplink=true&af_ios_url=https%3A%2F%2Fm.oliveyoung.co.kr%2Fm%2Fcommon%2Fpartner.do%3FchlNo%3D6%26chlDtlNo%3D74%26sndType%3Dplanshop%26sndVal%3D500000101070006%26_CAD%3Dnms17%26stonUseYn%3DY&af_web_id=7b4830ca-12c4-4e57-9a79-372d5e710b54&campaign=mNaver-SPDA&is_retargeting=true&media_source=mNaver";
+    var parts = app_link.split(':', 2);
+    scheme = parts[0];
+    data = parts[1];
+
+    var is_ucbrowser = (navigator.userAgent.indexOf('UCBrowser') > -1);
+    var is_android = (navigator.userAgent.indexOf('Android') > -1);
+    var store_url;
+    var openUrl;
+    var appsflyer_click_ts = Date.now();
+
+
+    if (is_android && !is_ucbrowser) {
+        store_url = store_link.indexOf('market://') == 0 ? "https://play.google.com/store/apps/" + store_link.substring(9) : store_link;
+        openUrl = "intent:" + data + "#Intent;scheme=" + scheme + ";package=" + package_name + ";S.browser_fallback_url=" + app_link + ";l.appsflyer_click_ts=" + appsflyer_click_ts + ";end";
+    } else {
+        store_url = store_link;
+        openUrl = app_link;
+    }
+    document.getElementById('download').href = store_url;
+    document.getElementById('open').href = openUrl;
+}
+    </script>
+</head>
+<body onload="init();">
+    <div id="logo" class="logo">
+    </div>
+    <div><div class="app-name">올리브영</div></div>
+    <div class="download-button">
+        <a class="button" id="download" target="_blank">Download</a>
+    </div>
+    <div class="open-button">
+        <a class="button" id="open" target="_blank">Open App</a>
+    </div>
+    <script type="text/javascript">
+        var encodedIcon = encodeURI("https://cdnappicons.appsflyer.com/com.oliveyoung.ver-2.2.2.png");
+        if (encodedIcon.indexOf("http") > -1) {
+            var logoElement = document.getElementById("logo");
+            var imgElement = document.createElement("IMG");
+            imgElement.setAttribute("src", encodedIcon);
+            imgElement.setAttribute("style", "max-width:150px;padding-top: 24%;");
+            imgElement.setAttribute("onclick", "redirect_to_web_store(loc)");
+            logoElement.appendChild(imgElement);
+        }
+        $("#open").click();
+        setTimeout(function() {
+          $("#download").click();
+        }, 3000);
+    </script>
+</body>
+</html>
