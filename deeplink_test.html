@@ -77,7 +77,7 @@ init = function () {
 
     if (is_android && !is_ucbrowser) {
         store_url = store_link.indexOf('market://') == 0 ? "https://play.google.com/store/apps/" + store_link.substring(9) : store_link;
-        openUrl = "intent:" + data + "#Intent;scheme=" + scheme + ";package=" + package_name + ";S.browser_fallback_url=" + app_link + ";l.appsflyer_click_ts=" + appsflyer_click_ts + ";end";
+        openUrl = "intent:" + data + "#Intent;scheme=" + scheme + ";package=" + package_name + ";S.browser_fallback_url=" + store_link + ";l.appsflyer_click_ts=" + appsflyer_click_ts + ";end";
     } else {
         store_url = store_link;
         openUrl = app_link;
@@ -87,10 +87,6 @@ init = function () {
   
     alert(openUrl);
     $(location).attr('href',openUrl);
-    alert(store_url);
-    setTimeout(function() {
-      $(location).attr('href',store_url);
-    }, 10000);
 }
     </script>
 </head>
