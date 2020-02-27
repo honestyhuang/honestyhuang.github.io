@@ -86,8 +86,7 @@ init = function () {
     document.getElementById('open').href = openUrl;
   
     setTimeout(function() {
-      $("#open").trigger("click");
-      alert("click");
+      window.location.href = openUrl;
     }, 2000);
 }
     </script>
