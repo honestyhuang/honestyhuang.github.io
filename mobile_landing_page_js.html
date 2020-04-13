@@ -42,6 +42,7 @@ function generateUrl() {
   finalURL = oneLinkURL + partnerIDParam + sourceValue + campaignParam + campaignValue
             + utmSourceParam + sourceValue + utmCampaignParam + campaignValue + utmContentParam + contentValue;
   
+  document.getElementById("http_referrer").innerHTML = document.referrer;
   document.getElementById("source_url").innerHTML = window.location.href;
   document.getElementById("utm_source").innerHTML = sourceValue;
   document.getElementById("utm_campaign").innerHTML = campaignValue;
@@ -55,6 +56,7 @@ function generateUrl() {
 </script>
 
 <body onload="generateUrl()">
+  <div><b>http_referrer:</b><span id="http_referrer"></span></div>
 <div><b>source_url:</b> <span id="source_url"></span></div><br>
 <div><b>utm_source:</b> <span id="utm_source"></span></div><br>
 <div><b>utm_campign:</b> <span id="utm_campaign"></span></div><br>
