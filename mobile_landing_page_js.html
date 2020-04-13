@@ -41,11 +41,21 @@ function generateUrl() {
 
   finalURL = oneLinkURL + partnerIDParam + sourceValue + campaignParam + campaignValue
             + utmSourceParam + sourceValue + utmCampaignParam + campaignValue + utmContentParam + contentValue;
+  
   document.getElementById("text").innerHTML = finalURL;
+  document.getElementById("source_url").innerHTML = window.location.href;
+  document.getElementById("utm_source").innerHTML = sourceValue;
+  document.getElementById("utm_campaign").innerHTML = campaignValue;
+  document.getElementById("utm_content").innerHTML = contentValue;
+  document.getElementById("final_url").innerHTML = finalURL;
 }
 
 </script>
 
 
-<input type=button onClick="generateUrl()" value="Generate the link with UTM">
-<div id="text"></div>
+<input type=button onClick="generateUrl()" value="Generate the link with UTM"><br><br>
+<div>source_url: <b id="source_url"></b></div>
+<div>utm_source: <b id="utm_source"></b></div>
+<div>utm_campign: <b id="utm_campaign"></b></div>
+<div>utm_content: <b id="utm_content"></b></div>
+<div>final URL: <span id="final_url"></span></div>
