@@ -41,10 +41,11 @@ function generateUrl() {
 
   finalURL = oneLinkURL + partnerIDParam + sourceValue + campaignParam + campaignValue
             + utmSourceParam + sourceValue + utmCampaignParam + campaignValue + utmContentParam + contentValue;
-  alert(finalURL);
+  document.getElementById("text").innerHTML = finalURL;
 }
 
 </script>
 
 
 <input type=button onClick="generateUrl()" value="Generate the link with UTM">
+<div id="text"></div>
