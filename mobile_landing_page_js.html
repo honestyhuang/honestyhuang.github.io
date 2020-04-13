@@ -44,7 +44,7 @@ function generateUrl() {
     channelValue = 'All-Link%20in%20Website';
   }
 
-  contentValue = encodeURIComponent(window.location.protocol + '//' + window.location.hostname);
+  contentValue = encodeURIComponent(window.location.protocol + '//' + window.location.hostname + window.location.pathname);
 
   finalURL = oneLinkURL + partnerIDParam + sourceValue + campaignParam + campaignValue + channelParam + channelValue
             + otherDefaultValue
