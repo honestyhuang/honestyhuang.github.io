@@ -7,7 +7,7 @@ function getParameterFromURL(name) {
     results = regex.exec(url);
   if (!results) return null;
   if (!results[2]) return '';
-  return decodeURIComponent(results[2].replace(/\+/g, ' '));
+  return (results[2].replace(/\+/g, ' '));
 }
 
 // generateUrl returns the URL to use behind the iOS and Android "Download" buttons on a landing page, based on the source of the page visitor.
