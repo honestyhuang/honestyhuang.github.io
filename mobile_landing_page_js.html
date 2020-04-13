@@ -59,6 +59,7 @@ function generateUrl() {
   document.getElementById("source_url").innerHTML = window.location.href;
   document.getElementById("utm_source").innerHTML = sourceValue;
   document.getElementById("utm_campaign").innerHTML = campaignValue;
+  document.getElementById("utm_medium").innerHTML = channelValue;
   document.getElementById("utm_content").innerHTML = contentValue;
   document.getElementById("final_url").innerHTML = finalURL;
 }
@@ -66,10 +67,11 @@ function generateUrl() {
 </script>
 
 <body onload="generateUrl()">
-  <div><b>http_referrer:</b> <span id="http_referrer"></span></div><br>
+<div><b>http_referrer:</b> <span id="http_referrer"></span></div><br>
 <div><b>source_url:</b> <span id="source_url"></span></div><br>
 <div><b>utm_source:</b> <span id="utm_source"></span></div><br>
 <div><b>utm_campign:</b> <span id="utm_campaign"></span></div><br>
+<div><b>utm_medium:</b> <span id="utm_medium"></span></div><br>
 <div><b>utm_content:</b> <span id="utm_content"></span></div><br>
 <div><b>final URL:</b> <span id="final_url"></span></div><br><br>
 <div><a href="https://linkaja.onelink.me/Mk5Y?pid=Website&c=General%20Website&af_channel=All-Link%20in%20Website&is_retargeting=true&af_click_lookback=7d&af_force_deeplink=true&af_dp=https%3A%2F%2Flinkaja.id%2Fhome%2Fdashboard&af_web_dp=https%3A%2F%2Fwww.linkaja.id%2Flinkaja-app&utm_source=Website&utm_medium=All-Link%20in%20Website&utm_campaign=General%20Website">test link</a></div>
