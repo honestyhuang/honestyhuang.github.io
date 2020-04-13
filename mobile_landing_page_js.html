@@ -1,6 +1,6 @@
 <script>
-//Returns the value of a parameter existing in the page's URL or ' ' if not exists.
 function getParameterFromURL(name) {
+  //var url = 'https://www.linkaja.id/?utm_source=jt_source&utm_campaign=jt_campaign&utm_medium=jt_medium';
   var url = window.location.href;
   var name = name.replace(/[\[\]]/g, '\\$&');
   var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
@@ -9,38 +9,51 @@ function getParameterFromURL(name) {
   if (!results[2]) return '';
   return (results[2].replace(/\+/g, ' '));
 }
-
 // generateUrl returns the URL to use behind the iOS and Android "Download" buttons on a landing page, based on the source of the page visitor.
 function generateUrl() {
   var oneLinkURL = 'https://linkaja.onelink.me/Mk5Y';   // **** Replace with your own basic OneLink URL ****
   var finalURL = "";
   var partnerIDParam = '?pid=';
   var campaignParam = '&c=';
-  var contentParam = '&af_sub1=';
+  var channelParam = '&af_channel=';
   var utmSourceParam = '&utm_source=';
   var utmCampaignParam = '&utm_campaign=';
   var utmContentParam = '&utm_content=';
+  var utmChannelParam = '&utm_medium=';
   var sourceValue;
   var campaignValue;
   var contentValue;
+  var channelValue;
+  var otherDefaultValue = '&is_retargeting=true&af_click_lookback=7d&af_force_deeplink=true&af_dp=https%3A%2F%2Flinkaja.id%2Fhome%2Fdashboard&af_web_dp=https%3A%2F%2Fwww.linkaja.id%2Flinkaja-app';
 
   if (getParameterFromURL('utm_source')) {
     sourceValue = getParameterFromURL('utm_source');
   } else {
-    sourceValue = 'unknown';
+    sourceValue = 'Website';
   }
 
   if (getParameterFromURL('utm_campaign')) {
     campaignValue = getParameterFromURL('utm_campaign');
   } else {
-    campaignValue = 'unknown';
+    campaignValue = 'General%20Website';
+  }
+  
+  if (getParameterFromURL('utm_medium')) {
+    channelValue = getParameterFromURL('utm_medium');
+  } else {
+    channelValue = 'All-Link%20in%20Website';
   }
 
-  contentValue = encodeURIComponent(window.location.href);
+  contentValue = encodeURIComponent(window.location.protocol + '//' + window.location.hostname);
 
-
-  finalURL = oneLinkURL + partnerIDParam + sourceValue + campaignParam + campaignValue
-            + utmSourceParam + sourceValue + utmCampaignParam + campaignValue + utmContentParam + contentValue;
+  finalURL = oneLinkURL + partnerIDParam + sourceValue + campaignParam + campaignValue + channelParam + channelValue
+            + otherDefaultValue
+            + utmSourceParam + sourceValue + utmCampaignParam + campaignValue + utmChannelParam + channelValue + utmContentParam + contentValue;
+  //alert(finalURL);
+  
+  // a hard-coded way to find the link with the specific url and replace it
+  var link_element = document.querySelectorAll('[href="https://linkaja.onelink.me/Mk5Y?pid=Website&c=General%20Website&af_channel=All-Link%20in%20Website&is_retargeting=true&af_click_lookback=7d&af_force_deeplink=true&af_dp=https%3A%2F%2Flinkaja.id%2Fhome%2Fdashboard&af_web_dp=https%3A%2F%2Fwww.linkaja.id%2Flinkaja-app&utm_source=Website&utm_medium=All-Link%20in%20Website&utm_campaign=General%20Website"]');
+  link_element[0].href = finalURL;
   
   document.getElementById("http_referrer").innerHTML = document.referrer;
   document.getElementById("source_url").innerHTML = window.location.href;
@@ -48,9 +61,6 @@ function generateUrl() {
   document.getElementById("utm_campaign").innerHTML = campaignValue;
   document.getElementById("utm_content").innerHTML = contentValue;
   document.getElementById("final_url").innerHTML = finalURL;
-  document.getElementById("link").href = finalURL;
-  
-  return finalURL;
 }
 
 </script>
@@ -62,5 +72,5 @@ function generateUrl() {
 <div><b>utm_campign:</b> <span id="utm_campaign"></span></div><br>
 <div><b>utm_content:</b> <span id="utm_content"></span></div><br>
 <div><b>final URL:</b> <span id="final_url"></span></div><br><br>
-<div><a id=link>test link</a></div>
+<div><a href="https://linkaja.onelink.me/Mk5Y?pid=Website&c=General%20Website&af_channel=All-Link%20in%20Website&is_retargeting=true&af_click_lookback=7d&af_force_deeplink=true&af_dp=https%3A%2F%2Flinkaja.id%2Fhome%2Fdashboard&af_web_dp=https%3A%2F%2Fwww.linkaja.id%2Flinkaja-app&utm_source=Website&utm_medium=All-Link%20in%20Website&utm_campaign=General%20Website">test link</a></div>
 </body>
