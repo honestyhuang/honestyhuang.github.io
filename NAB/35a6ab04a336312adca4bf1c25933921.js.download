@@ -1,1 +1,0 @@
-Bootstrapper.bindImmediate(function(){var Bootstrapper=window["Bootstrapper"];var ensightenOptions=Bootstrapper.ensightenOptions;Bootstrapper.on("click","#_content_mlc_en_personal_home_jcr_content_par-col-body-2_bootstrap_row_0_col1 .media-body .text-image p a1"+' ss2"+"s3',function(){Bootstrapper.ensEvent.trigger("TEST MLC EVENT",this)},true)},-1,-1);
