@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://appsflyersdk.github.io/appsflyer-onelink-smart-script/examples/style_test_page.css">
+  <title>Little Birdie Demo</title>
+</head>
+<body>
+  <div class="header">
+      <div class="header-container">
+        <img src="https://appsflyersdk.github.io/appsflyer-onelink-smart-script/examples/images/AF_LOGO.svg" alt="logo" class="logo">
+      </div>
+  </div>
+  <div class="container">
+      <h1 class="title"> Smart Script test page </h1>
+      <section class="shadow-box">
+        <div>
+          <h4>Incoming URL</h4>
+          <textarea id="input_url" class="incoming"></textarea>
+        </div>
+        <br>
+        <div>
+          <h4>Incoming URL Query Params</h4>
+          <textarea id="input_params" class="incoming"></textarea>
+        </div>
+      </section>
+
+      <section class="shadow-box">
+        <div class="output_url-container">
+          <h4>Outgoing URL</h4>
+          <input id="output_url">
+        </div>
+        <br>
+        <div class="output_url-container">
+          <h4>QR Code</h4>
+          <div id="my_qr_code_div_id"></div>
+        </div>
+      </section>
+  </div>
+
+
+  <script type="text/javascript" src="https://onelinksmartscript.appsflyer.com/onelink-smart-script-latest.js"></script>
+  <script type="text/javascript">
+   //Initializing Smart Script arguments
+    var oneLinkURL = "https://onelink-sim.onelink.me/coiD";
+    var mediaSource = {keys:["utm_source"],defaultValue:"no_utm"};
+    var deepLinkValue = {defaultValue:"apples"};
+    var custom_ss_ui = {paramKey:"af_ss_ui",defaultValue:"true"};
+
+    //Call the function after embedding the code through a global parameter on the window object called window.AF_SMART_SCRIPT.
+    //Onelink URL is generated.
+    var result = window.AF_SMART_SCRIPT.generateOneLinkURL({
+        oneLinkURL: oneLinkURL,
+        afParameters: {
+            mediaSource: mediaSource,
+            deepLinkValue: deepLinkValue,
+            afCustom: [
+               custom_ss_ui
+          ]
+        }
+    });
+
+      
+    var result_url = "No output from script"
+    if (result) {
+      qry_parmas = window.location.href.split('?')[1];
+      result_url = result.clickURL + "&deep_link_sub1=" + encodeURIComponent(qry_parmas);         
+      document.getElementById('input_url').innerHTML = window.location.href;
+      document.getElementById('input_params').innerHTML = qry_parmas;
+      document.getElementById('output_url').value = result_url;
+      new QRCode(document.getElementById("my_qr_code_div_id"), result_url);
+    }      
+  </script>
+</body>
+
+
+</html>
